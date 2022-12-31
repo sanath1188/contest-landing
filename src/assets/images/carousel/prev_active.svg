@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61.2 (101010) - https://sketch.com -->
+    <title>C16FC23E-3E2A-45C4-9324-0D6A4E57E536</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <circle id="path-1" cx="21.5999987" cy="21.5999987" r="21.5999987"></circle>
+        <filter x="-24.3%" y="-17.4%" width="148.6%" height="148.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0760216346 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-(4)-2" transform="translate(-185.000000, -1714.000000)">
+            <g id="Group-36" transform="translate(0.000000, 1435.000000)">
+                <g id="Group-55" transform="translate(190.000000, 174.000000)">
+                    <g id="Group-67" transform="translate(22.000000, 130.000000) scale(-1, 1) translate(-22.000000, -130.000000) translate(0.000000, 108.000000)">
+                        <g id="Oval">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <circle stroke="#FFFFFF" stroke-width="5.59999967" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" cx="21.5999987" cy="21.5999987" r="18.7999989"></circle>
+                        </g>
+                        <g id="next-(4)" transform="translate(17.799999, 14.799999)" fill="#5858EC" fill-rule="nonzero">
+                            <path d="M7.78278856,6.45371989 L1.72295218,0.223656718 C1.58279556,0.0794465086 1.39569865,0 1.19620242,0 C0.996706193,0 0.809609285,0.0794465086 0.669452666,0.223656718 L0.223187791,0.682352176 C-0.0671998955,0.981244055 -0.0671998955,1.46702872 0.223187791,1.76546532 L5.31178087,6.99709758 L0.217541672,12.2345347 C0.0773850527,12.3787449 0,12.5709872 0,12.7759774 C0,12.9811953 0.0773850527,13.1734376 0.217541672,13.3177616 L0.663806546,13.7763433 C0.804073873,13.9205535 0.991060074,14 1.1905563,14 C1.39005253,14 1.57714944,13.9205535 1.71730606,13.7763433 L7.78278856,7.5405891 C7.9232773,7.39592361 8.00044094,7.20277071 8,6.99743905 C8.00044094,6.79131064 7.9232773,6.59827156 7.78278856,6.45371989 Z" id="Path"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

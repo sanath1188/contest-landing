@@ -1,0 +1,472 @@
+<!-- Header -->
+<div *ngIf="!mobile" class="header display-flex">
+  <div class="header__icon-container vertical-center">
+    <div class="center-inner-div">
+      <img class="image-fit" src="assets/images/logo/gamezee_logo.svg">
+    </div>
+    <div class="header__title">
+      Random
+    </div>
+  </div>
+
+  <div class="header__menu-items-container display-flex">
+
+    <div class="header__about-text vertical-center" (click)="slideToDiv('about')">
+      ABOUT THE APP
+    </div>
+    <div class="header__other-text header__how-to vertical-center" (click)="slideToDiv('how-to')">
+      HOW TO INSTALL
+    </div>
+    <div class="header__other-text header__know-more vertical-center" (click)="slideToDiv('know')">
+      KNOW MORE
+    </div>
+    <div class="header__other-text header__know-more vertical-center" (click)="slideToDiv('contact')">
+      CONTACT US
+    </div>
+
+    <div class="vertical-center">
+      <div class="header__download-button center-inner-div" (click)="downloadOrFocusInput('header')">
+        <div class="header__download-button-text">
+          Download the App
+        </div>
+        <img class="header__download-icon" src="assets/images/download.svg">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<header *ngIf="mobile || tab" class="header display-flex vertical-center">
+  <div class="header__icon-container vertical-center">
+    <div class="center-inner-div">
+      <img class="image-fit header__logo-size" src="assets/images/logo/gamezee_logo.svg">
+    </div>
+    <div class="header__title">
+      Random
+    </div>
+  </div>
+
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <div class="mobile-menu__download-button center-inner-div" (click)="downloadOrFocusInput('header')">
+    <div class="mobile-menu__download-button-text">
+      Download
+    </div>
+    <img class="mobile-menu__download-icon" src="assets/images/download.svg">
+  </div>
+  <label (click)="toggleMobileMenu()" class="menu-icon display-flex" for="menu-btn">
+    <span class="navicon"></span>
+  </label>
+</header>
+
+<div *ngIf="showMobileMenu" class="mobile-menu">
+  <div class="mobile-menu__item center-inner-div" (click)="slideToDiv('about')">
+    About the app
+  </div>
+  <div class="mobile-menu__item center-inner-div" (click)="slideToDiv('how-to')">
+    How to install
+  </div>
+  <div class="mobile-menu__item center-inner-div" (click)="slideToDiv('know')">
+    Know more
+  </div>
+  <div class="mobile-menu__item center-inner-div" (click)="slideToDiv('contact')">
+    Contact us
+  </div>
+</div>
+
+<!-- Confetti -->
+<div class="confetti">
+  <img class="image-fit" src="assets/images/confetti.svg">
+</div>
+
+<!-- Intro section -->
+<div class="intro display-flex">
+  <div class="intro__container">
+    <div class="row full-height">
+      <div class="col-xl-5 col-lg-7 col-md-12 col-sm-12">
+        <div class="intro__phone-text">
+          <div class="center-inner-div">
+            <img class="image-fit" src="https://via.placeholder.com/1500x300">
+          </div>
+
+        </div>
+
+        <br><br>
+        <div class="intro__description">
+          After the match is finished, you have to answer 1 simple question as fast as you can
+        </div>
+
+        <div *ngIf="!(mobile || tab)" class="intro__phone-text">
+          Enter your phone number to get a link via SMS.
+        </div>
+
+        <div *ngIf="!(mobile || tab)" class="intro__phone-number-wrapper">
+          <div id="phone-no" class="form-group intro__has-search fit-width relative">
+            <div class="intro__india-code center-inner-div">
+              <div>
+                +91
+              </div>
+              <div class="intro__number-separator"></div>
+            </div>
+            <input type="text" maxlength="10" #phone class="form-control intro__search-bar full-width"
+              placeholder="Phone number" (ngModelChange)="validateContactNumber($event)" [(ngModel)]="contactNumber">
+            <div *ngIf="linkSent" class="intro__text-sent display-flex">
+              <img class="image-fit intro__sent-icon" src="assets/images/intro/sent_icon.svg">
+              Link sent
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="!(mobile || tab)" class="intro__get-link-btn center-inner-div" id="get-link-btn"
+          (click)="getAppLink()" [ngClass]="{'intro__get-link-btn--disabled': !enableGetLinkNow }">
+          <div class="intro__get-link-text">
+            Get the link now
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!(mobile || tab)" class="col-xl-7 col-lg-5 col-md-5 col-sm-5 col-5">
+        <div class="center-inner-div">
+          <img class="image-fit" src="https://via.placeholder.com/592x424">
+        </div>
+      </div>
+
+      <!-- <div *ngIf="mobile || tab" class="intro__download-wrapper center-inner-div">
+        <div class="intro__download-button center-inner-div" (click)="downloadOrFocusInput()">
+          <div class="intro__download-button-text">
+            Download
+          </div>
+          <img class="intro__download-icon" src="assets/images/download.svg">
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- About section -->
+<div class="about" id="about">
+  <div class="about__container">
+    <div class="row full-height">
+
+      <!-- Left -->
+      <div class="col-xl-7 col-lg-7">
+        <div class="about__cards display-flex">
+
+          <div>
+            <div class="about__card about__card-set-1">
+              <img class="image-fit about__card-image" src="https://via.placeholder.com/1224x1224">
+              <div class="about__pill">
+                <div class="about__pill-text center-inner-div">
+                  Rating
+                </div>
+              </div>
+
+              <!-- <div class="about__overlay">
+                <div class="about__overlay-content">
+                  Answer 2 Bollywood questions & Win Cash Prize upto
+
+                  <div class="about__overlay-price">
+                    ₹ 2000!
+                  </div>
+                </div>
+
+                <div class="about__pill">
+                  <div class="about__pill-text center-inner-div">
+                    Today
+                  </div>
+                </div>
+
+              </div> -->
+            </div>
+            <div class="about__card about__card-set-1">
+              <img class="image-fit about__card-image" src="https://via.placeholder.com/1224x1224">
+              <div class="about__pill">
+                <div class="about_pill-text center-inner-div">
+                  play and win
+                </div>
+              </div>
+              <!-- <div class="about__overlay">
+                <div class="about__overlay-content">
+                  Answer 2 Bollywood questions & Win Cash Prize upto
+
+                  <div class="about__overlay-price">
+                    ₹ 2000!
+                  </div>
+                </div>
+
+                <div class="about__pill">
+                  <div class="about__pill-text center-inner-div">
+                    Tomorrow
+                  </div>
+                </div>
+
+              </div> -->
+            </div>
+          </div>
+
+          <div style="margin-left: 20px;">
+            <div class="about__card about__card-set-2">
+              <img class="image-fit about__card-image" src="https://via.placeholder.com/1224x1224">
+              <div class="about__pill">
+                <div class="about__pill-text center-inner-div">
+                  Join The Quiz
+                </div>
+              </div>
+
+              <!-- <div class="about__overlay">
+                <div class="about__overlay-content">
+                  Answer 2 Bollywood questions & Win Cash Prize upto
+
+                  <div class="about__overlay-price">
+                    ₹ 2000!
+                  </div>
+                </div>
+
+                <div class="about__pill">
+                  <div class="about__pill-text center-inner-div">
+                    Football
+                  </div>
+                </div>
+
+              </div> -->
+
+            </div>
+            <div class="about__card about__card-set-3">
+              <img class="image-fit about__card-image" src="https://via.placeholder.com/1224x1224">
+              <div class="about__pill">
+                <div class="about__pill-text center-inner-div">
+                  Cricket
+                </div>
+              </div>
+
+              <!-- <div class="about__overlay">
+                <div class="about__overlay-content">
+                  Answer 2 Bollywood questions & Win Cash Prize upto
+
+                  <div class="about__overlay-price">
+                    ₹ 2000!
+                  </div>
+                </div>
+
+                <div class="about__pill">
+                  <div class="about__pill-text center-inner-div">
+                    Cricket
+                  </div>
+                </div>
+
+              </div> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="col-xl-5 col-lg-5">
+        <div class="about__description-container">
+
+          <div class="about__description-title">
+            How to play
+          </div>
+
+          <div class="about__description-text">
+            <p style="text-align:left">
+              1. Pick a tournament of your choice (cricket).<br>
+              2. After the match is finished, you have to answer 1 simple question as fast as you can.<br>
+              3. The question will be based on the team & player performance in the match.<br>
+              4. Compete with others, become a champion and win instant cash in your paytm.<br>
+              5. So start playing! What you waiting for<br>
+              <br> <br>
+              Invite your friends & see who the real winner is. You also get a referral bonus for every referral you
+              make.
+            </p>
+          </div>
+          <br><br> <br>
+          <div *ngIf="!mobile && !tab" class="about__money-img">
+            <img class="image-fit" src="assets/images/about/about_money.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How to install section -->
+<div class="how-to" id="how-to">
+  <div class="how-to__container">
+    <div *ngIf="(mobile || tab)" class="how-to__safe-top-wrapper center-inner-div">
+      <div class="how-to__top-safe-icon">
+        <img class="image-fit" src="assets/images/how/safe.svg">
+      </div>
+    </div>
+
+    <div class="how-to__title">
+      How to Install the app?
+      <div *ngIf="!(mobile || tab)" class="how-to__safe-icon">
+        <img class="image-fit" src="assets/images/how/safe.svg">
+      </div>
+    </div>
+    <div class="how-to__subtitle">
+      Follow the steps below to install Gamesfoo and start winning cash.
+    </div>
+
+    <div class="how-to__carousel">
+      <owl-carousel-o id="howToDesktopCarousel" *ngIf="howToDesktopCarousel && howToCarouselLoaded"
+        [options]="howToDesktopCarousel" #howToDesktopCarouselEl>
+        <ng-template carouselSlide *ngFor="let how of howData; let i = index;" [id]="i">
+          <div class="how-to__carousel-card">
+            <img [src]='how.src' class="image-fit">
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+
+    <div class="how-to__secure-text">
+      The Gamesfoo App is 100% Safe and Secure.
+    </div>
+  </div>
+</div>
+
+<!-- Invisible tag to support sliding to a specific slide in a carousel -->
+<!-- <p style="display: none; position: absolute; left: -99999px; width:500px; height:400px;"><a (click)="howToDesktopCarousel.to('slide-2')">move to 2th slide</a></p> -->
+
+<!-- Hanger beneath how to install section -->
+<div class="how-to-banner">
+  <img class="image-fit" src="assets/images/how/hanger.png">
+  <img *ngIf="!(mobile || tab)" class="how-to-lamp" src="assets/images/how/lamp.svg">
+</div>
+
+<!-- How to install section -->
+<div class="know" id="know">
+  <div class="how-to__container">
+    <div class="how-to__title">
+      Testimonials
+    </div>
+
+    <div class="how-to__carousel">
+      <owl-carousel-o *ngIf="knowDesktopCarousel" [options]="knowDesktopCarousel">
+        <ng-template carouselSlide *ngFor="let know of knowData">
+          <div class="how-to__carousel-card">
+            <img [src]='know.src' class="image-fit">
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>
+<div class="intro__phone-text">
+  <p style="text-align:center">
+    You will get warning message because you are downloading the app <br> from website & not from play store as it’s a
+    real money gaming app.
+  </p>
+</div>
+<!-- Download button section -->
+<div class="download">
+  <div class="download__download-wrapper center-inner-div">
+    <div class="download__download-btn center-inner-div" (click)="downloadOrFocusInput('bottom')">
+      <div class="download__download-text">
+        Download the app now!
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+</div>
+
+
+<div class="contact" id="contact">
+  <div class="download__contact-us">
+    Contact us
+  </div>
+
+  <div class="download__contact-us-sub">
+    Have a query? Shoot us an email or text our 24x7 customer support.
+  </div>
+
+  <div class="center-inner-div download__support">
+    <div class="download__support-box">
+      
+      <div class="download__email-cont display-flex">
+        <img src="assets/images/mail.svg" height="21" width="30">
+        <div class="download__email-cont-text" (click)="mailTo()">
+          test@gmail.com
+        </div>
+      </div>
+
+      <div class="download__support-cont display-flex">
+        <img src="assets/images/support.svg" height="32" width="28">
+        <div class="download__support-cont-text">
+          9x9x9x9x9x
+        </div>
+      </div>
+
+      <div class="download__email-cont display-flex">
+        <img src="assets/images/mail.svg" height="21" width="30">
+        <div class="download__email-cont-text">
+          Inexistent road, Inexistent city
+        </div>
+      </div>
+      
+    </div>
+
+    <div *ngIf="!(mobile || tab)" class="download__pot">
+      <img class="image-fit" src="assets/images/pot.svg">
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+<!-- Footer -->
+<div class="footer center-inner-div">
+  <div class="footer__text">
+    Copyright Ⓒ 2022
+  </div>
+
+  <div class="footer__line-separator">
+
+  </div>
+
+  <div class="footer__text">
+    Random Company Pvt Ltd
+  </div>
+
+  <div class="footer__line-separator">
+
+  </div>
+
+  <div class="footer__text">
+    All rights reserved
+  </div>
+
+  <div class="footer__line-separator">
+
+  </div>
+
+  <div class="footer__text">
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQl" target="_blank">Privacy Policy</a>
+  </div>
+
+  <div class="footer__line-separator">
+
+  </div>
+
+  <div class="footer__text">
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Terms & Conditions</a>
+  </div>
+
+  <div class="footer__line-separator">
+
+  </div>
+
+  <div class="footer__text">
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Refunds & Cancellations</a>
+  </div>
+</div>

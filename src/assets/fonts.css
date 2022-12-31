@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('fonts/lato/Lato-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('fonts/lato/Lato-Bold.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Lato-Semibold';
+    src: url('fonts/lato/Lato-Semibold.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Lato-Medium';
+    src: url('fonts/lato/Lato-Medium.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('fonts/lato/Lato-Regular.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Avenir-Regular';
+    src: url('fonts/avenir/Avenir-Regular.otf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Avenir-Bold';
+    src: url('fonts/avenir/Avenir-Bold.otf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Avenir-Semi-Bold';
+    src: url('fonts/avenir/Avenir-Semi-Bold.otf')  format('truetype')
+}
